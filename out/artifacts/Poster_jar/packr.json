@@ -1,0 +1,8 @@
+{
+  "platform": "windows64",
+  "output": "D:\\IntellijProjects\\Apinizer\\Poster\\out\\artifacts\\Poster_jar\\windows",
+  "executable": "my-app",
+  "classpath": ["D:\\IntellijProjects\\Apinizer\\Poster\\out\\artifacts\\Poster_jar\\Poster.jar"],
+  "mainclass": "com.apinizer.apitest.Main",
+  "jdk": "C:\\Program Files\\Java\\jdk-21"
+}
