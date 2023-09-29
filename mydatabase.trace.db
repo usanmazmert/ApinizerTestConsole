@@ -1,0 +1,161 @@
+2023-09-14 15:35:22.364223+03:00 database: wrong user or password; user: "MERTALI"
+org.h2.message.DbException: Wrong user name or password [28000-222]
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:223)
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:199)
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:188)
+	at com.h2database@2.2.222/org.h2.engine.Engine.openSession(Engine.java:154)
+	at com.h2database@2.2.222/org.h2.engine.Engine.openSession(Engine.java:222)
+	at com.h2database@2.2.222/org.h2.engine.Engine.createSession(Engine.java:201)
+	at com.h2database@2.2.222/org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at com.h2database@2.2.222/org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at com.h2database@2.2.222/org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at com.h2database@2.2.222/org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.login(WebApp.java:1039)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.process(WebApp.java:227)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at com.h2database@2.2.222/org.h2.server.web.WebThread.process(WebThread.java:154)
+	at com.h2database@2.2.222/org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-222]
+	at com.h2database@2.2.222/org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at com.h2database@2.2.222/org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
+2023-09-14 15:35:28.701406+03:00 database: wrong user or password; user: "MERTALI"
+org.h2.message.DbException: Wrong user name or password [28000-222]
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:223)
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:199)
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:188)
+	at com.h2database@2.2.222/org.h2.engine.Engine.openSession(Engine.java:154)
+	at com.h2database@2.2.222/org.h2.engine.Engine.openSession(Engine.java:222)
+	at com.h2database@2.2.222/org.h2.engine.Engine.createSession(Engine.java:201)
+	at com.h2database@2.2.222/org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at com.h2database@2.2.222/org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at com.h2database@2.2.222/org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at com.h2database@2.2.222/org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.test(WebApp.java:978)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.process(WebApp.java:242)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at com.h2database@2.2.222/org.h2.server.web.WebThread.process(WebThread.java:154)
+	at com.h2database@2.2.222/org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-222]
+	at com.h2database@2.2.222/org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at com.h2database@2.2.222/org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
+2023-09-14 15:35:30.993317+03:00 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-222]
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:223)
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:199)
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:188)
+	at com.h2database@2.2.222/org.h2.engine.Engine.openSession(Engine.java:154)
+	at com.h2database@2.2.222/org.h2.engine.Engine.openSession(Engine.java:222)
+	at com.h2database@2.2.222/org.h2.engine.Engine.createSession(Engine.java:201)
+	at com.h2database@2.2.222/org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at com.h2database@2.2.222/org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at com.h2database@2.2.222/org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at com.h2database@2.2.222/org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.test(WebApp.java:978)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.process(WebApp.java:242)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at com.h2database@2.2.222/org.h2.server.web.WebThread.process(WebThread.java:154)
+	at com.h2database@2.2.222/org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-222]
+	at com.h2database@2.2.222/org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at com.h2database@2.2.222/org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
+2023-09-14 15:35:45.395227+03:00 database: wrong user or password; user: "USER"
+org.h2.message.DbException: Wrong user name or password [28000-222]
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:223)
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:199)
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:188)
+	at com.h2database@2.2.222/org.h2.engine.Engine.openSession(Engine.java:154)
+	at com.h2database@2.2.222/org.h2.engine.Engine.openSession(Engine.java:222)
+	at com.h2database@2.2.222/org.h2.engine.Engine.createSession(Engine.java:201)
+	at com.h2database@2.2.222/org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at com.h2database@2.2.222/org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at com.h2database@2.2.222/org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at com.h2database@2.2.222/org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.login(WebApp.java:1039)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.process(WebApp.java:227)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at com.h2database@2.2.222/org.h2.server.web.WebThread.process(WebThread.java:154)
+	at com.h2database@2.2.222/org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-222]
+	at com.h2database@2.2.222/org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at com.h2database@2.2.222/org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
+2023-09-14 15:36:14.509916+03:00 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "JSON_DATA" not found; SQL statement:
+SELECT * FROM JSON_DATA [42102-222]
+2023-09-14 15:38:51.694742+03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO json_example (json_data) VALUES (?) [*]WHERE id=1"; SQL statement:
+INSERT INTO json_example (json_data) VALUES (?) WHERE id=1 [42000-222]
+2023-09-14 16:02:13.461389+03:00 database: wrong user or password; user: "USER"
+org.h2.message.DbException: Wrong user name or password [28000-222]
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:223)
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:199)
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:188)
+	at com.h2database@2.2.222/org.h2.engine.Engine.openSession(Engine.java:154)
+	at com.h2database@2.2.222/org.h2.engine.Engine.openSession(Engine.java:222)
+	at com.h2database@2.2.222/org.h2.engine.Engine.createSession(Engine.java:201)
+	at com.h2database@2.2.222/org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at com.h2database@2.2.222/org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at com.h2database@2.2.222/org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at com.h2database@2.2.222/org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.login(WebApp.java:1039)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.process(WebApp.java:227)
+	at com.h2database@2.2.222/org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at com.h2database@2.2.222/org.h2.server.web.WebThread.process(WebThread.java:154)
+	at com.h2database@2.2.222/org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-222]
+	at com.h2database@2.2.222/org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at com.h2database@2.2.222/org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
+2023-09-15 14:00:17.331126+03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE [*]* FROM APINIZER_APITEST"; expected "identifier"; SQL statement:
+DELETE * FROM APINIZER_APITEST [42001-222]
+2023-09-15 17:31:54.298577+03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DROP [*]DATABASE APINIZER_APITEST"; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, MATERIALIZED, VIEW, ROLE, ALIAS, SCHEMA, ALL OBJECTS, DOMAIN, TYPE, AGGREGATE, SYNONYM"; SQL statement:
+DROP DATABASE APINIZER_APITEST [42001-222]
+2023-09-21 16:44:22.984914+03:00 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/IntellijProjects/Apinizer/Poster/mydatabase.mv.db [2.2.222/7]" [50000-222]
+	at com.h2database@2.2.222/org.h2.message.DbException.get(DbException.java:212)
+	at com.h2database@2.2.222/org.h2.message.DbException.convert(DbException.java:407)
+	at com.h2database@2.2.222/org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at com.h2database@2.2.222/org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at com.h2database@2.2.222/org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at com.h2database@2.2.222/org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at com.h2database@2.2.222/org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at com.h2database@2.2.222/org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at com.h2database@2.2.222/org.h2.engine.Database.<init>(Database.java:326)
+	at com.h2database@2.2.222/org.h2.engine.Engine.openSession(Engine.java:92)
+	at com.h2database@2.2.222/org.h2.engine.Engine.openSession(Engine.java:222)
+	at com.h2database@2.2.222/org.h2.engine.Engine.createSession(Engine.java:201)
+	at com.h2database@2.2.222/org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at com.h2database@2.2.222/org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at com.h2database@2.2.222/org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:683)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230)
+	at com.poster.main/com.apinizer.apitest.db.H2DatabaseInitializer.init(H2DatabaseInitializer.java:25)
+	at com.poster.main/com.apinizer.apitest.Main.main(Main.java:61)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at javafx.graphics@20.0.1/com.sun.javafx.application.LauncherImpl.launchApplicationWithArgs(LauncherImpl.java:464)
+	at javafx.graphics@20.0.1/com.sun.javafx.application.LauncherImpl.launchApplication(LauncherImpl.java:363)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at java.base/sun.launcher.LauncherHelper$FXHelper.main(LauncherHelper.java:1081)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: D:/IntellijProjects/Apinizer/Poster/mydatabase.mv.db [2.2.222/7]" [50000-222]
+	at com.h2database@2.2.222/org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at com.h2database@2.2.222/org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 26 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: D:/IntellijProjects/Apinizer/Poster/mydatabase.mv.db [2.2.222/7]
+	at com.h2database@2.2.222/org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at com.h2database@2.2.222/org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at com.h2database@2.2.222/org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at com.h2database@2.2.222/org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at com.h2database@2.2.222/org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 20 more

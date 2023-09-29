@@ -1,0 +1,25 @@
+#container{
+    -fx-background-color: white;
+}
+
+#applyBtn{
+    -fx-background-color: #4747b0;
+    -fx-border-style: none;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+#applyBtn:hover{
+    -fx-background-color: #2f2fb0;
+}
+
+#cancelBtn{
+    -fx-border-style: none;
+    -fx-text-fill: #4747b0 ;
+    -fx-background-color: white;
+    -fx-cursor: hand;
+}
+
+#cancelBtn:hover{
+    -fx-text-fill: #2f2fb0;
+}

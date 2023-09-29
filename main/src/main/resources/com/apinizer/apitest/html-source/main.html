@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../css-source/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/95bf11279f.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/fold/xml-fold.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/hint/show-hint.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emmet/2.5.2/emmet.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emmet-codemirror/1.1.6/emmet-codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/fold/comment-fold.js"></script>
+    <script>
+        let responseEditor;
+        let requestEditor;
+    </script>
+
+</head>
+<body>
+    <nav id="main-nav">
+        <i id="add-tab-btn" class="fa-solid fa-plus"></i>
+    </nav>
+    <section id="main-body">
+        <div id="title-container">
+            <div id="tab-name-container">
+                <h5 id="tab-name">Name</h5>
+                <i class="fa-solid fa-pen"></i>
+                <input type="text" id="tab-name-input">
+            </div>
+            <div class="button-container">
+                <button id="save-btn">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    <span style="font-size: smaller;">Save</span>
+                </button>
+                <button id="settings-btn"><i class="fa-solid fa-gear"></i></button>
+            </div>
+        </div>
+        <div id="url-input-field">
+            <div id="method">
+                <!--<label for="method-box">Method<span style="color:red;">*</span></label>-->
+                <button data-method = "GET" name="method-button" id="method-button">
+                    <span class="method-name">Get</span><span><i class="fa-solid fa-angle-down"></i></span>
+                </button>
+                <div id="method-container">
+                    <button class="active-method">
+                        <span data-value="GET" class="method-name">Get</span>
+                    </button>
+                    <button>
+                        <span data-value="POST" class="method-name">Post</span>
+                    </button>
+                    <button>
+                        <span data-value="PUT" class="method-name">Put</span>
+                    </button>
+                    <button>
+                        <span data-value="HEAD" class="method-name">Head</span>
+                    </button>
+                    <button>
+                        <span data-value="OPTIONS" class="method-name">Options</span>
+                    </button>
+                    <button>
+                        <span data-value="DELETE" class="method-name">Delete</span>
+                    </button>
+                    <button>
+                        <span data-value="PATCH" class="method-name">Patch</span>
+                    </button>
+                    <button>
+                        <span data-value="TRACE" class="method-name">Trace</span>
+                    </button>
+                </div>
+            </div>
+            <div id="url">
+                <!--<label for="url-input">URL<span style="color:red;">*</span></label>-->
+                <div id="widget-container">
+                    <input placeholder="URL" type="text" id="url-input">
+                    <button id="send-btn">
+                        Send
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav id="tabs">
+            <button class="nav-btn">Parameters</button>
+            <button class="nav-btn">Authorization</button>
+            <button class="nav-btn">Headers</button>
+            <button class="nav-btn">Body</button>
+            <button class="nav-btn">Code Snippet</button>
+            <button class="nav-btn">Settings</button>
+        </nav>
+
+
+        <div id="main-div">
+            <div id="headers">
+                <div class="title-bar">
+                    <h6>Header Name</h6>
+                    <h6>Header Value</h6>
+                    <button id="headers-add-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <div id="headers-input-container">
+                </div>
+            </div>
+            <div id="parameters">
+                <div class="title-bar">
+                    <h6>Parameter Name</h6>
+                    <h6>Parameter Value</h6>
+                    <button id="parameters-add-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <div id="parameters-input-container">
+                </div>
+            </div>
+
+            <div id="authorization">
+                <div id="authorization-selection-field">
+                    <div>
+                        <label for="auth-btn">Type</label>
+                        <div id="authorization-type">
+                            <button id="auth-btn" name="auth-button">
+                                <span>No Auth</span><i class="fa-solid fa-angle-down"></i></span>
+                            </button>
+                            <div id="auth-container">
+                                <div data-value="0">
+                                    No Auth
+                                </div>
+                                <div data-value="1">
+                                    API Key
+                                </div>
+                                <div data-value="2">
+                                    Bearer Token
+                                </div>
+                                <div data-value="3">
+                                    Basic Auth
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="authorization-input-field">
+
+                </div>
+            </div>
+
+
+            <div id="body">
+                <div class="radio-container">
+                    <div id="raw">
+                        <input checked name="for-request-body" type="radio" id="radio-raw">
+                        <label type="radio" for="radio-raw">raw</label>
+                    </div>
+                    <div id="url-encoded">
+                        <input name="for-request-body" type="radio" id="radio-url-encoded">
+                        <label for="radio-url-encoded">x-www-form-urlencoded</label>
+                    </div>
+                </div>
+                <div id="request-url-encoded">
+                    <div class="title-bar">
+                        <h6>Key</h6>
+                        <h6>Value</h6>
+                        <h6>Description</h6>
+                        <button id="encoded-add-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <div id="encoded-input-container">
+                    </div>
+                </div>
+                <div id="request-body" class="code-mirror active-z">
+                    <div class="editor-container">
+                        <textarea id="code-mirror-text" class="code"></textarea>
+                    </div>
+                    <script>
+                        requestEditor = CodeMirror.fromTextArea(document.getElementById("code-mirror-text"), {
+                            lineNumbers: true,
+                            mode: "javascript",
+                            theme: "material-darker",
+                            autoCloseBrackets: true,
+                            foldGutter: true,
+                            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"]
+                        });
+                        document.getElementsByClassName("CodeMirror")[0].style.height = "29.50vh";
+                        document.getElementsByClassName("CodeMirror")[0].style.width = "100%";
+
+                    </script>
+                </div>
+            </div>
+
+            <div id="code-snippet"></div>
+            <div id="settings"></div>
+        </div>
+        <div id="response">
+            <h3>Response</h3>
+            <nav>
+                <button id="response-body-btn" class="active">Body</button>
+                <button id="response-headers-btn">Headers</button>
+                <div id="response-data">
+                    <p id="response-status-code">Status: <span style="color: red"></span></p>
+                    <p id="response-time" style="color: #007ecc">Time: <span></span>ms</p>
+                    <p id="response-size">Size: <span style="color: #007ecc"></span></p>
+                </div>
+            </nav>
+            <div>
+                <div id="response-headers">
+                    <div class="title-bar">
+                        <h6>Header Name</h6>
+                        <h6>Header Value</h6>
+                    </div>
+                    <div id="response-input-container">
+                    </div>
+                </div>
+                <div id="response-body" class="code-mirror active-z">
+                    <div class="editor-container">
+                        <textarea readonly id="response-code" class="code"></textarea>
+                    </div>
+                    <script>
+                        responseEditor = CodeMirror.fromTextArea(document.getElementById("response-code"), {
+                            lineNumbers: true,
+                            mode: "javascript",
+                            theme: "material-darker",
+                            autoCloseBrackets: true,
+                            foldGutter: true,
+                            gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+                            readOnly: true
+                        });
+                        document.getElementsByClassName("CodeMirror")[1].style.height = "31.30vh";
+                        document.getElementsByClassName("CodeMirror-scroll")[1].style.height = "30.50vh";
+                        document.getElementsByClassName("CodeMirror-scroll")[1].style.width = "100%";
+
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="blank-body">
+        <img src="../apinizer%20logo%20-%20A.png" alt="logo">
+        <p>Welcome To Apinizer API Test</p>
+    </section>
+
+    <script>
+    </script>
+    <script src="../js-source/main.js"></script>
+    <script src="../js-source/tabs/authorization.js"></script>
+    <script src="../js-source/tabs/headers.js"></script>
+    <script src="../js-source/tabs/parameters.js"></script>
+    <script src="../js-source/response.js"></script>
+    <script src="../js-source/tabs/body.js"></script>
+
+</body>
+</html>

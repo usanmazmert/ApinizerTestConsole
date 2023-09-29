@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css-source/request-settings.css">
+    <script src="https://kit.fontawesome.com/95bf11279f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="main-div">
+        <div id="request-div">
+            <label>Request Type<span style="color: red;">*</span></label>
+            <div class="select-field">
+                <button id="request-btn" class="select-btn" name="select-btn">
+                    <span>Select Request Type</span>
+                    <span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </span>
+                </button>
+                <div id="request-container" class="select-container">
+                    <div data-value="swagger">
+                        Swagger
+                    </div>
+                    <div data-value="openapi">
+                        OpenAPI
+                    </div>
+                    <div data-value="wsdl">
+                        WSDL
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="service-div">
+            <label>Service URL<span style="color: red;">*</span></label>
+            <div id="service-input-container">
+                <input type="text">
+                <button><i class="fa-solid fa-gears"></i></button>
+            </div>
+        </div>
+        <div id="endpoints-div">
+            <label>Endpoints<span style="color: red;">*</span></label>
+            <div class="select-field">
+                <button id="endpoint-btn" class="select-btn" name="endpoint-btn">
+                    <span>Select Request Type</span>
+                    <span>
+                        <i class="fa-solid fa-angle-down"></i>
+                    </span>
+                </button>
+                <div id="endpoint-container" class="select-container">
+                    <div data-value="swagger">
+                        Swagger
+                    </div>
+                    <div data-value="openapi">
+                        OpenAPI
+                    </div>
+                    <div data-value="wsdl">
+                        WSDL
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="button-container">
+        <button id="close-btn">Cancel</button>
+        <button id="apply-btn">Apply</button>
+    </div>
+
+    <script src="../js-source/request-settings.js">
+
+    </script>
+
+</body>
+</html>

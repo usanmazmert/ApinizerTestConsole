@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<?import javafx.scene.web.WebView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.TreeItem?>
+<VBox fx:id="mainContainer" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apinizer.apitest.Controller">
+   <HBox fx:id="body" VBox.vgrow="ALWAYS">
+         <WebView  fx:id="navigationView" minWidth="80" prefWidth="80"/>
+           <StackPane prefWidth="250" minWidth="250">
+               <VBox  fx:id="collectionsContainer">
+                   <HBox fx:id="addBtnContainer">
+                       <Button fx:id="addCollection" text="Add" alignment="CENTER_RIGHT"/>
+                   </HBox>
+                   <TreeView VBox.vgrow="ALWAYS" fx:id="collectionsTreeView" prefWidth="250.0" showRoot="false">
+                   </TreeView>
+               </VBox>
+               <TreeView visible="false" fx:id="historyTreeView"/>
+           </StackPane>
+         <WebView  fx:id="bodyView" HBox.hgrow="ALWAYS"/>
+   </HBox>
+</VBox>

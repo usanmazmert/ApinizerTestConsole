@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css-source/navigation.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/95bf11279f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="button-container">
+
+        <button class="active" id="collections-btn" onclick="javaFXController.setCollectionsVisibility()">
+            <i class="fa-regular fa-folder"></i>
+            <span>Collections</span>
+        </button>
+        <button id="history-btn" onclick="javaFXController.setHistoryVisibility()">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span>History</span>
+        </button>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll(".button-container > button");
+        buttons.forEach(item => item.addEventListener("click", () => {
+            buttons.forEach(item => item.classList.remove("active"));
+            item.classList.add("active");
+        }))
+    </script>
+
+</body>
+</html>

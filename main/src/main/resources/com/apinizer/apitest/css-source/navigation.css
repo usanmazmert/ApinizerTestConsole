@@ -1,0 +1,36 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.button-container > button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+    height: 3.5rem;
+    font-size: large;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+.button-container > button > span {
+    font-size: x-small;
+}
+
+.button-container > button:hover {
+    background-color: rgb(203, 203, 203);
+}
+
+.active{
+    border-left: solid 2px rgb(67, 62, 62) !important;
+}

@@ -1,0 +1,27 @@
+.root{
+    -fx-background: white;
+}
+ #addCollection {
+    -fx-border-style: none;
+    -fx-background-color: rgba(255, 255, 255, 0.94);
+    -fx-cursor: hand;
+    -fx-padding: 4 8;
+     -fx-font-size: 12;
+ }
+#addCollection:hover {
+    -fx-background-color: #dcdcdc; /* Change the background color on hover */
+}
+
+#collectionsContainer{
+
+}
+
+#addBtnContainer{
+    -fx-border-width: 1 1 0 1;
+    -fx-padding : 5 0 5 5;
+    -fx-border-style: solid;
+    -fx-border-color: rgb(218, 218, 218);
+    -fx-pref-height: 40;
+    -fx-hgrow: ALWAYS;
+}
+
