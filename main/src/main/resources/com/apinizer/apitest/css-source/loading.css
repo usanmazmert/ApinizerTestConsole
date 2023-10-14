@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Style for the loading spinner container */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style for the loading spinner itself */
+.loader {
+    margin-top: 4rem;
+    border: 4px solid #e8a14c;
+    border-top: 4px solid #52a4d9;
+    border-bottom: 4px solid #1552c5;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+/* Keyframes for the spinning animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

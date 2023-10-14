@@ -17,8 +17,11 @@
 <?import javafx.scene.web.WebView?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.control.TreeItem?>
-<VBox fx:id="mainContainer" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apinizer.apitest.Controller">
-   <HBox fx:id="body" VBox.vgrow="ALWAYS">
+<StackPane fx:id="mainContainer" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apinizer.apitest.Controller">
+    <VBox fx:id="loadingScreen">
+        <WebView fx:id="loadingScreenView" />
+    </VBox>
+   <HBox visible="false" fx:id="body" VBox.vgrow="ALWAYS">
          <WebView  fx:id="navigationView" minWidth="80" prefWidth="80"/>
            <StackPane prefWidth="250" minWidth="250">
                <VBox  fx:id="collectionsContainer">
@@ -32,4 +35,4 @@
            </StackPane>
          <WebView  fx:id="bodyView" HBox.hgrow="ALWAYS"/>
    </HBox>
-</VBox>
+</StackPane>

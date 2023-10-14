@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.h2.tools.Server;
 
 import java.awt.*;
@@ -30,7 +31,7 @@ public class Main extends javafx.application.Application{
     {
 
         // Load the icon image (you need to provide the path to your icon image)
-        Image icon = new Image(getClass().getResourceAsStream("apinizer logo - A.png"));
+        Image icon = new Image(getClass().getResourceAsStream("images/apinizer logo - A.png"));
 
         // Set the window icon by adding the icon to the list of icons
         stage.getIcons().add(icon);

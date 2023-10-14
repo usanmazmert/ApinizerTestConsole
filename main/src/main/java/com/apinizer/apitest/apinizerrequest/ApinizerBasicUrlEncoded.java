@@ -1,6 +1,7 @@
 package com.apinizer.apitest.apinizerrequest;
 
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 
 public class ApinizerBasicUrlEncoded implements NameValuePair {
 

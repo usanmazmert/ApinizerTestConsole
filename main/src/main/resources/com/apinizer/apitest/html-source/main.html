@@ -5,7 +5,7 @@
     <title>Title</title>
 
     <link rel="stylesheet" href="../css-source/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.css">
+    <link rel="stylesheet" href="../css-source/codemirror.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
@@ -13,14 +13,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/95bf11279f.js" crossorigin="anonymous"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/mode/javascript/javascript.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/edit/closebrackets.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/fold/xml-fold.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/hint/show-hint.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/emmet/2.5.2/emmet.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/emmet-codemirror/1.1.6/emmet-codemirror.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.0/addon/fold/comment-fold.js"></script>
+    <script src="../js-source/code-mirror/codemirror.min.js"></script>
+    <script src="../js-source/code-mirror/javascript.min.js"></script>
+    <script src="../js-source/code-mirror/closebrackets.min.js"></script>
+    <script src="../js-source/code-mirror/xml-fold.js"></script>
+    <script src="../js-source/code-mirror/show-hint.js"></script>
+    <script src="../js-source/code-mirror/comment-fold.js"></script>
     <script>
         let responseEditor;
         let requestEditor;
@@ -29,28 +27,28 @@
 </head>
 <body>
     <nav id="main-nav">
-        <i id="add-tab-btn" class="fa-solid fa-plus"></i>
+        <img src="../images/134224_add_plus_new_icon.png" alt="add-tab-btn" id="add-tab-btn">
     </nav>
     <section id="main-body">
         <div id="title-container">
             <div id="tab-name-container">
                 <h5 id="tab-name">Name</h5>
-                <i class="fa-solid fa-pen"></i>
+                <img src="../images/9348984.png" alt="pen">
                 <input type="text" id="tab-name-input">
             </div>
             <div class="button-container">
                 <button id="save-btn">
-                    <i class="fa-solid fa-floppy-disk"></i>
+                    <img src="../images/9035613_save_outline_floppy_icon.png" alt="floppy-disc">
                     <span style="font-size: smaller;">Save</span>
                 </button>
-                <button id="settings-btn"><i class="fa-solid fa-gear"></i></button>
+                <button id="settings-btn"><img src="../images/211751_gear_icon.png" alt="gear"></button>
             </div>
         </div>
         <div id="url-input-field">
             <div id="method">
                 <!--<label for="method-box">Method<span style="color:red;">*</span></label>-->
                 <button data-method = "GET" name="method-button" id="method-button">
-                    <span class="method-name">Get</span><span><i class="fa-solid fa-angle-down"></i></span>
+                    <span class="method-name">Get</span><img style="max-width:20%; object-fit: cover" src="../images/arrow-down-s.png" alt="arrow-down">
                 </button>
                 <div id="method-container">
                     <button class="active-method">
@@ -94,8 +92,8 @@
             <button class="nav-btn">Authorization</button>
             <button class="nav-btn">Headers</button>
             <button class="nav-btn">Body</button>
-            <button class="nav-btn">Code Snippet</button>
-            <button class="nav-btn">Settings</button>
+            <!--<button class="nav-btn">Code Snippet</button>-->
+            <!--<button class="nav-btn">Settings</button>-->
         </nav>
 
 
@@ -104,7 +102,7 @@
                 <div class="title-bar">
                     <h6>Header Name</h6>
                     <h6>Header Value</h6>
-                    <button id="headers-add-btn"><i class="fa-solid fa-plus"></i></button>
+                    <button id="headers-add-btn"><img style="object-fit: cover; max-width: 0.75rem; margin-bottom: -1px" src="../images/134224_add_plus_new_icon.png" alt="add-tab-btn"></button>
                 </div>
                 <div id="headers-input-container">
                 </div>
@@ -113,7 +111,7 @@
                 <div class="title-bar">
                     <h6>Parameter Name</h6>
                     <h6>Parameter Value</h6>
-                    <button id="parameters-add-btn"><i class="fa-solid fa-plus"></i></button>
+                    <button id="parameters-add-btn"><img style="object-fit: cover; max-width: 0.75rem; margin-bottom: -1px" src="../images/134224_add_plus_new_icon.png" alt="add-tab-btn"></button>
                 </div>
                 <div id="parameters-input-container">
                 </div>
@@ -125,7 +123,7 @@
                         <label for="auth-btn">Type</label>
                         <div id="authorization-type">
                             <button id="auth-btn" name="auth-button">
-                                <span>No Auth</span><i class="fa-solid fa-angle-down"></i></span>
+                                <span>No Auth</span><img style="max-width:15%; object-fit: cover" src="../images/arrow-down-s.png" alt="arrow-down"></span>
                             </button>
                             <div id="auth-container">
                                 <div data-value="0">
@@ -166,7 +164,7 @@
                         <h6>Key</h6>
                         <h6>Value</h6>
                         <h6>Description</h6>
-                        <button id="encoded-add-btn"><i class="fa-solid fa-plus"></i></button>
+                        <button id="encoded-add-btn"><img style="object-fit: cover; max-width: 0.75rem; margin-bottom: -1px" src="../images/134224_add_plus_new_icon.png" alt="add-tab-btn"></button>
                     </div>
                     <div id="encoded-input-container">
                     </div>
@@ -191,8 +189,8 @@
                 </div>
             </div>
 
-            <div id="code-snippet"></div>
-            <div id="settings"></div>
+            <!--<div id="code-snippet"></div>-->
+            <!--<div id="settings"></div>-->
         </div>
         <div id="response">
             <h3>Response</h3>
@@ -238,7 +236,7 @@
         </div>
     </section>
     <section id="blank-body">
-        <img src="../apinizer%20logo%20-%20A.png" alt="logo">
+        <img src="../images/apinizer%20logo%20-%20A.png" alt="logo">
         <p>Welcome To Apinizer API Test</p>
     </section>
 

@@ -31,7 +31,7 @@ function addNewParam(value1, value2){
                 child = root.children[i];
                 tabList[activeElementId].parameters.push([child.children[0].value, child.children[1].value]);
             }
-            let str = urlInput.textContent;
+            let str = urlInput.value;
             let index = str.indexOf("?");
             if(index !== -1){
                 str = str.substring(0, index);
@@ -44,7 +44,7 @@ function addNewParam(value1, value2){
         }
     })
     let removeBtn = document.createElement("button");
-    removeBtn.innerHTML = "<i class='fa-solid fa-square-minus'></i>";
+    removeBtn.innerHTML = "<img style=\"object-fit: cover; max-width: 0.75rem;margin-bottom: -1px;\" src=\"../images/326681_circle_remove_icon.png\" alt=\"remove-btn\">";
     removeBtn.classList.add("remove-btn");
     removeBtn.addEventListener("click", () => {
         root.removeChild(newDiv);

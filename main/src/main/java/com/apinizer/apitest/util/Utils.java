@@ -8,6 +8,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import javafx.scene.control.TreeItem;
 import org.apache.commons.lang3.StringUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 
 import java.io.IOException;
 import java.util.*;
@@ -216,7 +218,10 @@ public class Utils {
                 }
                 return;
             }
+            ApinizerRequestTab originalTab = getParent(item).getApinizerRequestTabs().get(item.getValue().getId());
             ApinizerRequestTab newTab = new ApinizerRequestTab(item.getValue().getValue(), UUID.randomUUID().toString(), parent.getCollectionId());
+            newTab.setAuth(originalTab.getAuth());
+            newTab.setApinizerHttpRequest(originalTab.getApinizerHttpRequest());
             parent.getApinizerRequestTabs().put(newTab.getId(), newTab);
             TreeItem<CustomTreeItem> copyTreeItem = new TreeItem<>(new CustomTreeItem(newTab.getId(), item.getValue().getValue(), false));
             parentItem.getChildren().add(copyTreeItem);
@@ -243,9 +248,11 @@ public class Utils {
         }
         return array;
     }
-    public static List<ApinizerBasicUrlEncoded> encodedUrlParser(String json){
-        List<ApinizerBasicUrlEncoded> array = new ArrayList<>();
-        if(json.isEmpty())return array;
+    public static List<NameValuePair> encodedUrlParser(String json){
+        List<NameValuePair> array = new ArrayList<>();
+        if(json.isEmpty()) {
+            return array;
+        }
         List<String> inputs = Arrays.stream(json.split(",")).toList();
         for(int i = 0; i < inputs.size(); i+=2){
             array.add(new ApinizerBasicUrlEncoded(inputs.get(i), inputs.get(i+1)));

@@ -10,6 +10,7 @@
 }
 
 .button-container > button {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,6 +22,12 @@
     border: none;
     cursor: pointer;
     background-color: white;
+}
+
+.button-container > button > img{
+    position: relative;
+    object-fit: cover;
+    max-width: 30%;
 }
 
 .button-container > button > span {

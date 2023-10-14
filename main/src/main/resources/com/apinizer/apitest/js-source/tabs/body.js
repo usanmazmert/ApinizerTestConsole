@@ -44,7 +44,7 @@ function addUrlEncodedBody(value1, value2, value3){
     input3.disabled = true;
     //Temp End
     let removeBtn = document.createElement("button");
-    removeBtn.innerHTML = "<i class='fa-solid fa-square-minus'></i>";
+    removeBtn.innerHTML = "<img style=\"object-fit: cover; max-width: 0.75rem;margin-bottom: -1px;\" src=\"../images/326681_circle_remove_icon.png\" alt=\"remove-btn\">";
     removeBtn.classList.add("remove-btn");
 
     removeBtn.addEventListener("click", () => {

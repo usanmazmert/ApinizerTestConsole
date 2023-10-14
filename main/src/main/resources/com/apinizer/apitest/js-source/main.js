@@ -14,7 +14,7 @@ const methodBtn = document.getElementById("method-button");
 const methodContainer = document.getElementById("method-container")
 
 const tabName = document.getElementById("tab-name");
-const editNameButton = document.querySelector("#tab-name-container i");
+const editNameButton = document.querySelector("#tab-name-container img");
 const editNameInput = document.querySelector("#tab-name-container input");
 
 let temporalList = [];
@@ -258,7 +258,7 @@ function addNewTab(name, id){
     element.append(firstChild)
     const secondChild = document.createElement("span");
     secondChild.classList.add("nav-close-btn");
-    secondChild.innerHTML = "<i class='fa-solid fa-xmark'></i>";
+    secondChild.innerHTML = "<img style=\"object-fit: cover; max-width: 1rem;margin-bottom: -1px; border-radius: 4px; padding: 2px;\" src=\"../images/9104213_close_cross_remove_delete_icon.png\" alt=\"remove-btn\">";
     element.append(secondChild)
     element.append(document.createElement("div"));
 

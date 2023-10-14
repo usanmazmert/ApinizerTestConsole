@@ -83,7 +83,7 @@ public class CustomTreeCell extends TreeCell<CustomTreeItem> {
                 // Set the appropriate context menu based on the item's type
                 if (item.isDirectory()) {
                     setContextMenu(directoryContextMenu);
-                    icon.setImage(new Image(Main.class.getResourceAsStream("5994710.png")));
+                    icon.setImage(new Image(Main.class.getResourceAsStream("images/5994710.png")));
                 } else {
                     setContextMenu(fileContextMenu);
                 }

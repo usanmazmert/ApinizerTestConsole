@@ -15,12 +15,16 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import netscape.javascript.JSException;
 import org.apache.http.NameValuePair;
 import netscape.javascript.JSObject;
+import org.apache.http.message.BasicNameValuePair;
 
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -31,6 +35,8 @@ import java.util.List;
 
 
 public class Controller{
+    @FXML
+    WebView loadingScreenView;
 
     @FXML
     WebView bodyView;
@@ -38,9 +44,12 @@ public class Controller{
     @FXML
     WebView navigationView;
 
+
     static WebEngine bodyEngine;
 
     static WebEngine navEngine;
+
+    static WebEngine loadingEngine;
 
     @FXML
     TreeView<CustomTreeItem> collectionsTreeView;
@@ -52,10 +61,13 @@ public class Controller{
     HBox body;
 
     @FXML
-    VBox mainContainer;
+    StackPane mainContainer;
 
     @FXML
     Button addCollection;
+
+    @FXML
+    VBox loadingScreen;
 
     public static JSObject responseObject;
 
@@ -78,6 +90,19 @@ public class Controller{
     protected void initialize(){
 
         try{
+
+            loadingEngine = loadingScreenView.getEngine();
+            loadingEngine.load(getClass().getResource("html-source/loading.html").toExternalForm());
+
+            loadingEngine.setJavaScriptEnabled(true);
+            loadingEngine.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                try{
+                }catch (Exception ex){
+                    loadingEngine.reload();
+                }
+            });
+
+
             TreeItem<CustomTreeItem> historiesRootItem = new TreeItem<>(new CustomTreeItem("1", "historyRoot", true));
             historyTreeView.setRoot(historiesRootItem);
             historyTreeView.setShowRoot(false);
@@ -161,9 +186,11 @@ public class Controller{
                             bodyEngine.executeScript("activeElementId = " + "'" + jsonData.tabIndexId + "'");
                         }
 
+                        loadingScreen.setVisible(false);
+                        body.setVisible(true);
                     }
                 }catch (Exception ex){
-                    ex.printStackTrace();
+                    bodyEngine.reload();
                 }
 
             });
@@ -290,7 +317,8 @@ public class Controller{
         System.out.println(temporalTab.getName());
         ApinizerHttpRequest apinizerHttpRequest = ApinizerHttpRequest.createSimpleRequest(jsObject.getMember("url").toString(), Utils.headerParser(jsObject.getMember("headers").toString()), jsObject.getMember("body").toString(),
                 EnumHttpRequestMethod.valueOf(jsObject.getMember("method").toString()), 10, null);
-        //apinizerHttpRequest.setNameValuePairList((List<NameValuePair>) Utils.encodedUrlParser(jsObject.getMember("urlencoded").toString()));
+        List<NameValuePair> nameValuePairList = Utils.encodedUrlParser(jsObject.getMember("urlencoded").toString());
+        apinizerHttpRequest.setNameValuePairList(nameValuePairList);
         apinizerHttpRequest.setParameterList(Utils.parameterParser(jsObject.getMember("parameters").toString()));
         temporalTab.setApinizerHttpRequest(apinizerHttpRequest);
         temporalTab.getAuth().setMethod(jsObject.getMember("authMethod").toString());
